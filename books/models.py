@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    location = models.CharField(blank=True, null=True, max_length=100)git 
+    location = models.CharField(blank=True, null=True, max_length=100)
 
     def __repr__(self):
         return f"<User username={self.username}>"
