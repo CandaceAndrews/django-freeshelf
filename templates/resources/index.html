@@ -3,4 +3,9 @@
 {% block content %}
     <h1>Freeshelf - Resources</h1>
     <h2>Home</h2>
+    <ul>
+    {% for resource in free_resources %}
+    <li>{{ resource }}</li>
+    {% endfor %}
+    </ul>
 {% endblock %}
