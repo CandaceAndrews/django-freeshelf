@@ -13,8 +13,8 @@ class User(AbstractUser):
 
 
 class Resource(models.Model):
-    title = models.CharField(max_length=200)
-    author = models.CharField(max_length=200)
-    description = models.TextField()
-    link = models.URLField(max_length=200)
+    title = models.CharField(max_length=200, blank=True, null=True)
+    author = models.CharField(max_length=200, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    link = models.URLField(max_length=200, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
