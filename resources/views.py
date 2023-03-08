@@ -11,7 +11,3 @@ def list_resources(request):
         print(free_resources)
 
     return render(request, 'resources/index.html', {'free_resources': free_resources})
-
-
-def login(request):
-    pass
