@@ -21,11 +21,8 @@ from resources import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.list_resources, name="home"),
-<<<<<<< Updated upstream
+    path("resources/<int:pk>", views.details_about_resource,
+         name="details_about_resource"),
     path('accounts/', include('registration.backends.simple.urls')),
     # access to django registration redux
-=======
-    path('resources/<int:pk>', views.details_about_resource,
-         name="details_about_resource")
->>>>>>> Stashed changes
 ]
