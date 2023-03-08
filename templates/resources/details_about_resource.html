@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}<title>Resource Description</title>{% endblock %}
+{% block content %}
+    <h1>Resource Description:</h1>
+    <h2>Title: {{ resource_description.title }}</h2>
+    <h2>Author: {{ resource_description.author }}<h2>
+    <p>Description: </p>
+    <p>{{ resource_description.description }}</p>
+    <p>Link: {{ resource_description.link }}
+
+<footer>
+    <button class='button is-primary'><a href="{% url 'home' %}">Home</a></button>
+</footer>
+{% endblock %}

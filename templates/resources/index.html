@@ -5,7 +5,7 @@
     <h2>Home</h2>
     <ul>
     {% for resource in free_resources %}
-    <li>{{ resource }}</li>
+    <li><a href="{% url 'details_about_resource' resource.pk %}">{{ resource }}</a></li>
     {% endfor %}
     </ul>
 {% endblock %}
