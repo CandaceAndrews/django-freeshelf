@@ -137,3 +137,6 @@ STATIC_URL = "/static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "resources.User"
+
+LOGIN_REDIRECT_URL = '/'
+# when a user is logged in, go to homepage instead of django built-in "profile" page
