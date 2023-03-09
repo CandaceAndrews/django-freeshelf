@@ -21,6 +21,7 @@ from resources import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.list_resources, name="home"),
+    path('resource/new', views.add_resource, name="add_resource"),
     path("resources/<int:pk>", views.details_about_resource,
          name="details_about_resource"),
     path('accounts/', include('registration.backends.simple.urls')),
