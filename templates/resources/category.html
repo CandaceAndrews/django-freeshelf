@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Freeshelf</h1>
+<ul>
+{% for resource in resources %}
+<li><a href="{% url 'details_about_resource' resource.pk %}">{{ resource }}</a></li>
+{% endfor %}
+</ul>
+<button><a href="{% url 'add_resource' %}">Add a new resource</a></button>
+<button><a href="{% url 'home' %}">Home</a></button>
+{% endblock %}

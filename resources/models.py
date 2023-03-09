@@ -20,9 +20,8 @@ class Resource(models.Model):
     description = models.TextField(blank=True, null=True)
     link = models.URLField(max_length=200, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    # playing with foreign key idea:
-    # category = models.ForeignKey(Category, default=1, on_delete=models.SET_DEFAULT)
-    # not sure if we set a default and what to set it to, and if we do the above or CASCADE
+    category = models.ForeignKey(
+        to="Category", on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return f"{self.title} by {self.author}"

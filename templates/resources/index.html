@@ -8,5 +8,5 @@
     <li><a href="{% url 'details_about_resource' resource.pk %}">{{ resource }}</a></li>
     {% endfor %}
     </ul>
-    <a href="{% url 'add_resource' %}">Add a new resource</a>
+    <button><a href="{% url 'add_resource' %}">Add a new resource</a></button>
 {% endblock %}

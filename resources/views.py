@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Resource
+from .models import Resource, Category
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import ResourceForm
 
@@ -28,3 +28,9 @@ def add_resource(request):
             return redirect('home')
     form = ResourceForm()
     return render(request, 'resources/add_resource.html', {'form': form})
+
+
+def resource_category(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+    resources = Resource.objects.filter(category=category)
+    return render(request, 'resources/category.html', {'resources': resources})
