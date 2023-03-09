@@ -24,7 +24,6 @@ def add_resource(request):
         new_resource = ResourceForm(request.POST)
         if new_resource.is_valid():
             new_resource.save()
-            # creating a new instance of Album
             return redirect('home')
     form = ResourceForm()
     return render(request, 'resources/add_resource.html', {'form': form})
