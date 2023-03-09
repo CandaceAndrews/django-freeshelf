@@ -6,9 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/resources.css' %}">
-    <title>Freeshelf - Resources</title>
+    {% block title %}<title>Freeshelf - Resources</title>{% endblock %}
 </head>
 <body>
-    {% block content %}{% endblock %}
+    <header>
+        <a href="/accounts/login">Login</a> |
+        <a href="/accounts/logout">Logout</a>
+    </header>
+    {% block content %}
+    {% endblock %}
+    
 </body>
 </html>
