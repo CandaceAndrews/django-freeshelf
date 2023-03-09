@@ -20,6 +20,9 @@ class Resource(models.Model):
     description = models.TextField(blank=True, null=True)
     link = models.URLField(max_length=200, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    # playing with foreign key idea:
+    # category = models.ForeignKey(Category, default=1, on_delete=models.SET_DEFAULT)
+    # not sure if we set a default and what to set it to, and if we do the above or CASCADE
 
     def __str__(self):
         return f"{self.title} by {self.author}"
@@ -42,3 +45,7 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         return reverse("article_detail", kwargs={"slug": self.slug})
+
+    # ForeigKey example from docs:
+    # class Entry(models.Model):
+        # blog = models.ForeignKey(Blog, on_delete=models.CASCADE, null=True)
