@@ -1,0 +1,13 @@
+{% load static %}
+{% block titile %}
+{{ category }}
+{% endblock %}
+{% block content %}
+    <h1>Freeshelf</h1>
+    <h2>Recently added books</h2>
+    <ul>
+    {% for resource in resources_in_category %}
+    <li><a href="{% url 'details_about_resource' resource.pk %}">{{ resource }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

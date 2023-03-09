@@ -25,5 +25,7 @@ urlpatterns = [
     path("resources/<int:pk>", views.details_about_resource,
          name="details_about_resource"),
     path('accounts/', include('registration.backends.simple.urls')),
+    path("resources/category/<slug:slug>",
+         views.resource_category, name="category")
     # access to django registration redux
 ]
